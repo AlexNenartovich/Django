@@ -29,7 +29,6 @@ def employeeApi(request, id=0):
             return JsonResponse('Successfully updated', safe=False)
         return JsonResponse('Failed to update', safe=False)
     elif request.method=='DELETE':
-        print(id)
         employee=Employees.objects.get(EmployeeId=id)
         employee.delete()
         return JsonResponse('Successfully deleted', safe=False)

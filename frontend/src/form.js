@@ -53,7 +53,9 @@ class Form extends Component {
 
    render() {
      const style = {
-       textDecoration: 'none'
+       textDecoration: 'none',
+       color: "black",
+       width: "200px"
      }
      const art = this.state.django.map(emp => (
        <ul key={emp.EmployeeId}>

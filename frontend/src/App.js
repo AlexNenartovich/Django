@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Form from "./form";
 import Employee from "./Employee"
+import Search from "./search";
 
 class App extends React.Component {
 
@@ -11,6 +12,7 @@ class App extends React.Component {
         <Routes>
           <Route path="/" element={<Form />}/>
           <Route path="/employee" element={<Employee />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
       </Router>
     )

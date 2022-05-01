@@ -54,8 +54,7 @@ class Form extends Component {
    render() {
      const style = {
        textDecoration: 'none',
-       color: "black",
-       width: "200px"
+       color: "black"
      }
      const art = this.state.django.map(emp => (
        <ul key={emp.EmployeeId}>
@@ -74,6 +73,7 @@ class Form extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <div><Link to="/search" >Search</Link></div>
         <input type="text" name="EmployeeName" onChange={this.handleChange} placeholder="Title"></input>
         <br />
         <textarea placeholder="Body" name="Department" onChange={this.handleChange}></textarea>

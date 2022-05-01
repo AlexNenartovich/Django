@@ -32,3 +32,12 @@ def employeeApi(request, id=0):
         employee=Employees.objects.get(EmployeeId=id)
         employee.delete()
         return JsonResponse('Successfully deleted', safe=False)
+
+@csrf_exempt
+def searchApi(request, name):
+    name = name + '%'
+    url = "SELECT * FROM EmployeeApp_employees WHERE EmployeeName LIKE " + "'$s'", [name] 
+    print(url)
+    employees = Employees.objects.raw("SELECT * FROM EmployeeApp_employees WHERE EmployeeName LIKE " + "%s", [name])
+    employees_serializer = EmployeeSerializer(employees, many=True)
+    return JsonResponse(employees_serializer.data, safe=False)

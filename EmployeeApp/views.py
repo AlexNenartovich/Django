@@ -35,7 +35,7 @@ def employeeApi(request, id=0):
 
 @csrf_exempt
 def searchApi(request, name):
-    name = name + '%'
+    name = '%' + name + '%'
     url = "SELECT * FROM EmployeeApp_employees WHERE EmployeeName LIKE " + "'$s'", [name] 
     print(url)
     employees = Employees.objects.raw("SELECT * FROM EmployeeApp_employees WHERE EmployeeName LIKE " + "%s", [name])
